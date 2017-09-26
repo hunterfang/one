@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- namespace 里的命名：包名+MMapper名 -->
+<mapper namespace="mybatisdao.UserMapper">
+       
+       <!-- id要唯一，相当于方法名 resultType为返回值类型 -->
+       <select id="count" resultType="int">
+            select count(*) from user
+       </select>
+       
+       <select id="getlist" resultType="User">
+            select * from user
+       </select>
+       
+       <delete id="delete" parameterType="int">
+            DELETE FROM USER WHERE id=#{id}
+       </delete>
+       
+       <insert id="add" parameterType="User">
+            INSERT INTO USER () VALUES (#{id},#{name},#{age},#{sex},#{deptno})
+       </insert>
+       
+       <update id="update" parameterType="User">
+            update user set deptno=#{deptno} where id>#{id}
+       </update>
+       
+       <select id="getlistfy" parameterType="page" resultType="User">
+            SELECT * FROM `user` LIMIT #{index},#{rongliang}
+       </select>
+</mapper>

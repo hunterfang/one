@@ -1,0 +1,13 @@
+#设置应用名称
+spring.application.name: esb-springboot
+#设置端口
+server.port=8888
+#配置git配置仓库地址
+spring.cloud.config.server.git.uri: https://github.com/hunterfang/one/
+#配置搜索目录
+spring.cloud.config.server.git.searchPaths: resources
+#配置git分支名称
+spring.cloud.config.label: master
+#git帐号密码,如果是公共项目化帐号密码可以不输入
+#spring.cloud.config.server.git.username= your username
+#spring.cloud.config.server.git.password= your password
